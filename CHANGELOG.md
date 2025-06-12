@@ -1,5 +1,10 @@
 ## Changelog
 
+### `@jupyter-lsp/jupyterlab-lsp 5.1.1rc1`
+
+- bug fixes:
+  - Fixed jump to definition for notebooks that have special characters in filename ([#1128](https://github.com/jupyter-lsp/jupyterlab-lsp/pull/1128))
+
 ### `@jupyter-lsp/jupyterlab-lsp (next)`
 
 - bug fixes:
