@@ -1,0 +1,40 @@
+{% set python_min  = "3.10" %}
+
+package:
+    name: jupyterlab-lsp
+    version: 5.1.2
+
+source:
+  - url: ../dist/jupyterlab_lsp-5.1.2.tar.gz
+    sha256: e7582b2ae0edbb490adca72d7d33763182a1eb076c6cfeeaaa85e3980a4cf272
+
+build:
+  noarch: python
+  number: 1
+  script: {{ PYTHON }} -m pip install . --no-deps -vv --no-build-isolation --disable-pip-version-check
+
+requirements:
+  host:
+    - pip
+    - python {{ python_min }}
+    - setuptools
+  run:
+    - jupyter-lsp >=2.2.5
+    - jupyterlab >=4.1.0,<5.0.0a0
+    - python >={{ python_min }}
+
+test:
+  requires:
+    - python {{ python_min }}
+    - pip
+    - jupyterlab >=4.0.0,<5
+  commands:
+    - pip check
+    - jupyter labextension list 2>&1 | grep -ie " @jupyter-lsp/jupyterlab-lsp.*OK"
+
+
+about:
+  license: BSD-3-Clause
+  summary: Language Server Protocol integration for JupyterLab
+  homepage: https://github.com/jupyter-lsp/jupyterlab-lsp
+  documentation: https://jupyterlab-lsp.readthedocs.io
