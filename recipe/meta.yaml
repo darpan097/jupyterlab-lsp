@@ -5,13 +5,8 @@ package:
     version: 5.1.2
 
 source:
-  # path: ../dist/jupyterlab_lsp-5.1.2.tar.gz
   - url: ../dist/jupyterlab_lsp-5.1.2.tar.gz
-    sha256: 063b59ca8a82b6d7b218350273caf89d68374110166f695ecdd61e148689f6e0
-    # target_directory: jupyterlab-lsp
-  # - url: https://pypi.org/packages/source/j/jupyter-lsp/jupyter-lsp-2.2.5.tar.gz
-  #   sha256: 793147a05ad446f809fd53ef1cd19a9f5256fd0a2d6b7ce943a982cb4f545001
-  #   target_directory: jupyter-lsp
+    sha256: e7582b2ae0edbb490adca72d7d33763182a1eb076c6cfeeaaa85e3980a4cf272
 
 build:
   noarch: python
